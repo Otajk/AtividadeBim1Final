@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html,
+html:before{
+  --s: 56px; /* control the size */
+  --g: 10px; /* control the gap */
+  --c:#1c2541; /* first color */
+  
+  --_l: #0000 calc(33% - .866*var(--g)),var(--c) calc(33.2% - .866*var(--g)) 33%,#0000 34%;
+  background:
+    repeating-linear-gradient(var(--c) 0 var(--g), #0000 0 50%)
+     0 calc(.866*var(--s) - var(--g)/2),
+    conic-gradient(from -150deg at var(--g) 50%,var(--c) 120deg,#0000 0),
+    linear-gradient(-120deg,var(--_l)),linear-gradient( -60deg,var(--_l))
+    #0b132b; /* second color */
+  background-size: var(--s) calc(3.466*var(--s));
+  animation: p infinite 2s linear;
+  z-index: -1;
+}
+html:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  -webkit-mask: 
+    linear-gradient(#000 50%,#0000 0) 
+    0 calc(.866*var(--s))/100% calc(3.466*var(--s));
+  animation-direction: reverse;
+}
+@keyframes p {
+  to {
+    background-position-x: calc(-1*var(--s));
+  }
+}
+
+body{
+    height: auto;
+    width: 100vw;
+    max-width: 100%;
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#placar{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60vw;
+    background-color: #080e1e;
+    gap: 30px;
+    box-shadow: 0px 0px 30px -20px #5bc0be;
+    color: white;
+    border-radius: 15px;
+}
+#titulo{
+    font-family: "Boldonse";
+    
+    
+}
+#teams{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 1000px;
+    height: 400px;
+    gap: 30px;
+    transition: all 0.2s;
+    font-family: "Boldonse";
+}
+#teams > div{
+    width: 300px;
+    height: 100%;
+    background-color: #111a35;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    gap: 30px;
+    transition: all 0.2s;
+}
+#teams > div:hover #teams{
+  height: calc(400px + 10px);
+}
+#teams > div:hover{
+  width: calc(300px + 10px);
+}
+.numero{
+    font-family: 'Digital';
+    font-size: 10rem;
+}
+.marcar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 0;
+    width: 100%;
+    height: 80px;
+    cursor: pointer;
+    font-family: 'Boldonse';
+    color: #6fffe9;
+    background-color: #0b132b;
+    transition: all 0.2s;
+    
+    }
+    .marcar:hover{
+    color: #0b132b;
+    background-color: #6fffe9;
+
+    }
+    #ganhador{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Boldense";
+    }
+
+    #ganhador > h1{
+      font-family: "Boldonse";
+    }
+
+  hr{
+    width: 80%;
+    height: 5px;
+    background-color: #6fffe9;
+    border: 0;
+    border-radius: 10px;
+  }
+  .participantes{
+      font-family: "Boldonse";
+  }
+  #diferença{
+    display: flex;
+    flex-direction: column;
+
+  }
+  #endgame{
+    font-family: 'Boldonse';
+  }
+  #diferenca > h1{
+     font-family: 'Boldonse';
+  }
+  #finalizarJogo{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #finalizarJogo > button{
+    height: 100px;
+    width: 200px;
+    background-color: #0b132b;
+    border: 0;
+    color: white;
+    font-family: 'Boldonse';
+    font-size: 1.2rem;
+    border-radius: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+   #finalizarJogo > button:hover{
+    background-color: #1c2541;
+    color: #6fffe9;
+    letter-spacing: 2px;
+
+   }
+   #time2, #time1{
+    color: #6fffe9;
+   }
+   #num1, #num2{
+    color: white;
+   }
+   #time2win, #time1win{
+    color: #6fffe9;
+   }
+ 
+@font-face {
+    font-family: 'digital';
+    src: url(font/DS-DIGIB.TTF);
+}
